@@ -16,22 +16,37 @@ config focusCheckWidthMax 3000
 alias m-laptop		1
 alias m-dell 		0
 
+
 # Position Aliases
-alias laptop-left-half		move screenOriginX;screenOriginY		screenSizeX*0.55;screenSizeY			${m-laptop}
-alias laptop-right-half		move screenOriginX+756;screenOriginY	screenSizeX*0.55;screenSizeY			${m-laptop}
-alias laptop-right-third	move screenOriginX+977;screenOriginY	screenSizeX*0.4;screenSizeY				${m-laptop}
-alias laptop-left-fat		move screenOriginX;screenOriginY		screenSizeX*0.8;screenSizeY				${m-laptop}
-alias laptop-center-fat		move screenOriginX+168;screenOriginY	screenSizeX*0.8;screenSizeY				${m-laptop}
-alias laptop-right-fat		move screenOriginX+336;screenOriginY	screenSizeX*0.8;screenSizeY				${m-laptop}
+alias third 	0.4
+alias half 		0.55
+alias fat 		0.8
 
-alias dell-left-half		move screenOriginX+2;screenOriginY 		screenSizeX*0.55;screenSizeY			${m-dell}
-alias dell-right-half		move screenOriginX+1125;screenOriginY 	screenSizeX*0.55;screenSizeY			${m-dell}
+alias left-third		move screenOriginX;screenOriginY								screenSizeX*${third};screenSizeY
+alias left-half 		move screenOriginX;screenOriginY								screenSizeX*${half};screenSizeY
+alias left-fat 			move screenOriginX;screenOriginY								screenSizeX*${fat};screenSizeY
+alias center-third		move screenOriginX+screenSizeX*(1-${third})/2;screenOriginY		screenSizeX*${third};screenSizeY
+alias center-half		move screenOriginX+screenSizeX*(1-${half})/2;screenOriginY		screenSizeX*${half};screenSizeY
+alias center-fat 		move screenOriginX+screenSizeX*(1-${fat})/2;screenOriginY		screenSizeX*${fat};screenSizeY
+alias center-full		move screenOriginX;screenOriginY								screenSizeX;screenSizeY
+alias right-third 		move screenOriginX+screenSizeX*(1-${third});screenOriginY		screenSizeX*${third};screenSizeY
+alias right-half 		move screenOriginX+screenSizeX*(1-${half});screenOriginY		screenSizeX*${half};screenSizeY
+alias right-fat 		move screenOriginX+screenSizeX*(1-${fat});screenOriginY			screenSizeX*${fat};screenSizeY
 
-alias dell-left-fat			move screenOriginX+2;screenOriginY 		screenSizeX*0.8;screenSizeY				${m-dell}
-alias dell-right-fat		move screenOriginX+500;screenOriginY 	screenSizeX*0.8;screenSizeY				${m-dell}
-alias dell-center-fat		move screenOriginX+250;screenOriginY 	screenSizeX*0.8;screenSizeY				${m-dell}
+alias laptop-left-half		${left-half}	${m-laptop}
+alias laptop-left-fat		${left-fat}		${m-laptop}
+alias laptop-center-fat		${center-fat}	${m-laptop}
+alias laptop-right-third	${right-third}	${m-laptop}
+alias laptop-right-half		${right-half}	${m-laptop}
+alias laptop-right-fat		${right-fat}	${m-laptop}
+
+alias dell-left-half		${left-half}	${m-dell}
+alias dell-left-fat			${left-fat}		${m-dell}
+alias dell-center-fat		${center-fat}	${m-dell}
 alias dell-center-fat-2		move screenOriginX+300;screenOriginY 	screenSizeX*0.8;screenSizeY				${m-dell}
 alias dell-center-fat-3		move screenOriginX+350;screenOriginY 	screenSizeX*0.8;screenSizeY				${m-dell}
+alias dell-right-half		${right-half}	${m-dell}
+alias dell-right-fat		${right-fat}	${m-dell}
 
 
 # Montior Layouts
@@ -46,8 +61,11 @@ default 2monitor							resolutions:${m-dell};${m-laptop};
 
 
 # Bind
-bind end:cmd;alt 	layout 2monitor
-#bind s:cmd;alt 		focus 'Sublime Text'
-#bind t:cmd;alt 		focus 'iTerm2'
-#bind c:cmd;alt 		focus 'Google Chrome'
+bind end:alt;cmd 	layout 2monitor
+bind s:alt;cmd 		focus 'Sublime Text'
+bind t:alt;cmd		focus 'iTerm2'
+bind c:alt;cmd		focus 'Google Chrome'
+bind right:alt;cmd	chain ${laptop-left-half} | ${laptop-right-half} | ${dell-left-half} | ${dell-right-half}
+bind left:alt;cmd	chain ${laptop-right-half} | ${laptop-left-half} | ${dell-right-half} | ${dell-left-half}
+bind up:alt;cmd		chain ${center-fat} | ${center-full}
  
