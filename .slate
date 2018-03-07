@@ -1,0 +1,53 @@
+# Configuration file for Slate
+#  https://github.com/jigish/slate
+#  https://blog.mikecordell.com/2014/05/25/getting-started-with-slate.html
+
+
+# Configs
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config secondsBetweenRepeat 0.1
+config checkDefaultsOnLoad true
+config focusCheckWidthMax 3000
+
+
+# Monitor Aliases
+alias m-laptop		1
+alias m-dell 		0
+
+# Position Aliases
+alias laptop-left-half		move screenOriginX;screenOriginY		screenSizeX*0.55;screenSizeY			${m-laptop}
+alias laptop-right-half		move screenOriginX+756;screenOriginY	screenSizeX*0.55;screenSizeY			${m-laptop}
+alias laptop-right-third	move screenOriginX+977;screenOriginY	screenSizeX*0.4;screenSizeY				${m-laptop}
+alias laptop-left-fat		move screenOriginX;screenOriginY		screenSizeX*0.8;screenSizeY				${m-laptop}
+alias laptop-center-fat		move screenOriginX+168;screenOriginY	screenSizeX*0.8;screenSizeY				${m-laptop}
+alias laptop-right-fat		move screenOriginX+336;screenOriginY	screenSizeX*0.8;screenSizeY				${m-laptop}
+
+alias dell-left-half		move screenOriginX+2;screenOriginY 		screenSizeX*0.55;screenSizeY			${m-dell}
+alias dell-right-half		move screenOriginX+1125;screenOriginY 	screenSizeX*0.55;screenSizeY			${m-dell}
+
+alias dell-left-fat			move screenOriginX+2;screenOriginY 		screenSizeX*0.8;screenSizeY				${m-dell}
+alias dell-right-fat		move screenOriginX+500;screenOriginY 	screenSizeX*0.8;screenSizeY				${m-dell}
+alias dell-center-fat		move screenOriginX+250;screenOriginY 	screenSizeX*0.8;screenSizeY				${m-dell}
+alias dell-center-fat-2		move screenOriginX+300;screenOriginY 	screenSizeX*0.8;screenSizeY				${m-dell}
+alias dell-center-fat-3		move screenOriginX+350;screenOriginY 	screenSizeX*0.8;screenSizeY				${m-dell}
+
+
+# Montior Layouts
+layout 2monitor 'Sublime Text':REPEAT			${dell-center-fat} | ${dell-center-fat-2} | ${dell-center-fat-3}
+layout 2monitor 'iTerm2':REPEAT					${dell-left-fat}
+layout 2monitor 'Spotify':REPEAT				${laptop-right-half}
+layout 2monitor 'Activity Monitor'				${laptop-right-third}
+layout 2monitor 'Google Chrome':REPEAT_LAST		${dell-right-fat} | ${laptop-left-fat} | ${laptop-center-fat} | ${laptop-right-fat}
+
+# Default Layouts
+default 2monitor							resolutions:${m-dell};${m-laptop};
+
+
+# Bind
+bind end:cmd;alt 	layout 2monitor
+#bind s:cmd;alt 		focus 'Sublime Text'
+#bind t:cmd;alt 		focus 'iTerm2'
+#bind c:cmd;alt 		focus 'Google Chrome'
+ 
