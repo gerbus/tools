@@ -54,4 +54,4 @@ bind c:alt;cmd		focus 'Google Chrome'
 bind right:alt;cmd	chain ${right-half} | ${left-half} right | ${right-half} | ${left-half} next
 bind left:alt;cmd	chain ${left-half} | ${right-half} left | ${left-half} | ${right-half} next
 bind up:alt;cmd		chain ${center-fat} | ${center-full}
-bind pad0:alt;cmd	chain throw ${m-dell} | throw ${m-laptop}
+bind pad0:alt;cmd	throw next
