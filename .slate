@@ -28,33 +28,19 @@ alias left-fat 			move screenOriginX;screenOriginY								screenSizeX*${fat};scr
 alias center-third		move screenOriginX+screenSizeX*(1-${third})/2;screenOriginY		screenSizeX*${third};screenSizeY
 alias center-half		move screenOriginX+screenSizeX*(1-${half})/2;screenOriginY		screenSizeX*${half};screenSizeY
 alias center-fat 		move screenOriginX+screenSizeX*(1-${fat})/2;screenOriginY		screenSizeX*${fat};screenSizeY
+alias center-fat-2		move screenOriginX+50+screenSizeX*(1-${fat})/2;screenOriginY	screenSizeX*${fat};screenSizeY
+alias center-fat-3		move screenOriginX+50+screenSizeX*(1-${fat})/2;screenOriginY	screenSizeX*${fat};screenSizeY
 alias center-full		move screenOriginX;screenOriginY								screenSizeX;screenSizeY
 alias right-third 		move screenOriginX+screenSizeX*(1-${third});screenOriginY		screenSizeX*${third};screenSizeY
 alias right-half 		move screenOriginX+screenSizeX*(1-${half});screenOriginY		screenSizeX*${half};screenSizeY
 alias right-fat 		move screenOriginX+screenSizeX*(1-${fat});screenOriginY			screenSizeX*${fat};screenSizeY
 
-alias laptop-left-half		${left-half}	${m-laptop}
-alias laptop-left-fat		${left-fat}		${m-laptop}
-alias laptop-center-fat		${center-fat}	${m-laptop}
-alias laptop-right-third	${right-third}	${m-laptop}
-alias laptop-right-half		${right-half}	${m-laptop}
-alias laptop-right-fat		${right-fat}	${m-laptop}
-
-alias dell-left-half		${left-half}	${m-dell}
-alias dell-left-fat			${left-fat}		${m-dell}
-alias dell-center-fat		${center-fat}	${m-dell}
-alias dell-center-fat-2		move screenOriginX+300;screenOriginY 	screenSizeX*0.8;screenSizeY				${m-dell}
-alias dell-center-fat-3		move screenOriginX+350;screenOriginY 	screenSizeX*0.8;screenSizeY				${m-dell}
-alias dell-right-half		${right-half}	${m-dell}
-alias dell-right-fat		${right-fat}	${m-dell}
-
-
 # Montior Layouts
-layout 2monitor 'Sublime Text':REPEAT			${dell-center-fat} | ${dell-center-fat-2} | ${dell-center-fat-3}
-layout 2monitor 'iTerm2':REPEAT					${dell-left-fat}
-layout 2monitor 'Spotify':REPEAT				${laptop-right-half}
-layout 2monitor 'Activity Monitor'				${laptop-right-third}
-layout 2monitor 'Google Chrome':REPEAT_LAST		${dell-right-fat} | ${laptop-left-fat} | ${laptop-center-fat} | ${laptop-right-fat}
+layout 2monitor 'Sublime Text':REPEAT			${center-fat} ${m-dell} | ${center-fat-2} ${m-dell} | ${center-fat-3} ${m-dell}
+layout 2monitor 'iTerm2':REPEAT					${left-fat} ${m-dell}
+layout 2monitor 'Spotify':REPEAT				${right-half} ${m-laptop}
+layout 2monitor 'Activity Monitor'				${right-third} ${m-laptop}
+layout 2monitor 'Google Chrome':REPEAT_LAST		${right-fat} ${m-dell} | ${left-fat} ${m-laptop} | ${center-fat} ${m-laptop} | ${right-fat} ${m-laptop}
 
 # Default Layouts
 default 2monitor							resolutions:${m-dell};${m-laptop};
@@ -65,7 +51,7 @@ bind end:alt;cmd 	layout 2monitor
 bind s:alt;cmd 		focus 'Sublime Text'
 bind t:alt;cmd		focus 'iTerm2'
 bind c:alt;cmd		focus 'Google Chrome'
-bind right:alt;cmd	chain ${laptop-left-half} | ${laptop-right-half} | ${dell-left-half} | ${dell-right-half}
-bind left:alt;cmd	chain ${laptop-right-half} | ${laptop-left-half} | ${dell-right-half} | ${dell-left-half}
+bind right:alt;cmd	chain ${right-half} | ${left-half} right | ${right-half} | ${left-half} next
+bind left:alt;cmd	chain ${left-half} | ${right-half} left | ${left-half} | ${right-half} next
 bind up:alt;cmd		chain ${center-fat} | ${center-full}
- 
+bind pad0:alt;cmd	chain throw ${m-dell} | throw ${m-laptop}
