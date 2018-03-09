@@ -28,7 +28,7 @@ alias left-fat 			move screenOriginX;screenOriginY								screenSizeX*${fat};scr
 alias center-third		move screenOriginX+screenSizeX*(1-${third})/2;screenOriginY		screenSizeX*${third};screenSizeY
 alias center-half		move screenOriginX+screenSizeX*(1-${half})/2;screenOriginY		screenSizeX*${half};screenSizeY
 alias center-fat 		move screenOriginX+screenSizeX*(1-${fat})/2;screenOriginY		screenSizeX*${fat};screenSizeY
-alias center-fat-2		move screenOriginX+50+screenSizeX*(1-${fat})/2;screenOriginY	screenSizeX*${fat};screenSizeY
+alias center-fat-2		move screenOriginX-50+screenSizeX*(1-${fat})/2;screenOriginY	screenSizeX*${fat};screenSizeY
 alias center-fat-3		move screenOriginX+50+screenSizeX*(1-${fat})/2;screenOriginY	screenSizeX*${fat};screenSizeY
 alias center-full		move screenOriginX;screenOriginY								screenSizeX;screenSizeY
 alias right-third 		move screenOriginX+screenSizeX*(1-${third});screenOriginY		screenSizeX*${third};screenSizeY
@@ -36,11 +36,11 @@ alias right-half 		move screenOriginX+screenSizeX*(1-${half});screenOriginY		scr
 alias right-fat 		move screenOriginX+screenSizeX*(1-${fat});screenOriginY			screenSizeX*${fat};screenSizeY
 
 # Montior Layouts
-layout 2monitor 'Sublime Text':REPEAT			${center-fat} ${m-dell} | ${center-fat-2} ${m-dell} | ${center-fat-3} ${m-dell}
+layout 2monitor 'Sublime Text':REPEAT			${center-fat-2} ${m-dell} | ${center-fat} ${m-dell} | ${center-fat-3} ${m-dell}
 layout 2monitor 'iTerm2':REPEAT					${left-fat} ${m-dell}
 layout 2monitor 'Spotify':REPEAT				${right-half} ${m-laptop}
 layout 2monitor 'Activity Monitor'				${right-third} ${m-laptop}
-layout 2monitor 'Google Chrome':REPEAT_LAST		${right-fat} ${m-dell} | ${left-fat} ${m-laptop} | ${center-fat} ${m-laptop} | ${right-fat} ${m-laptop}
+layout 2monitor 'Google Chrome':REPEAT_LAST		${right-fat} ${m-dell} | ${left-fat} ${m-laptop} | ${center-fat-2} ${m-laptop} | ${center-fat} ${m-laptop} | ${center-fat-3} ${m-laptop}
 
 # Default Layouts
 default 2monitor							resolutions:${m-dell};${m-laptop};
@@ -51,7 +51,7 @@ bind end:alt;cmd 	layout 2monitor
 bind s:alt;cmd 		focus 'Sublime Text'
 bind t:alt;cmd		focus 'iTerm2'
 bind c:alt;cmd		focus 'Google Chrome'
-bind right:alt;cmd	chain ${right-half} | ${left-half} right | ${right-half} | ${left-half} next
-bind left:alt;cmd	chain ${left-half} | ${right-half} left | ${left-half} | ${right-half} next
-bind up:alt;cmd		chain ${center-fat} | ${center-full}
+bind right:alt;cmd	chain ${right-fat} | ${right-half} | ${right-third} | ${left-half} next
+bind left:alt;cmd	chain ${left-fat} | ${left-half} | ${left-third} | ${right-half} previous
+bind up:alt;cmd		chain ${center-fat} | ${center-full} | ${center-fat-2} | ${center-fat-3}
 bind pad0:alt;cmd	throw next
