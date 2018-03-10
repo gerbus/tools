@@ -20,19 +20,23 @@ alias m-dell 		0
 # Position Aliases
 alias third 	0.4
 alias half 		0.5
+alias twothirds 0.6
 alias fat 		0.8
 
 alias left-third		move screenOriginX;screenOriginY								screenSizeX*${third};screenSizeY
 alias left-half 		move screenOriginX;screenOriginY								screenSizeX*${half};screenSizeY
+alias left-twothirds 	move screenOriginX;screenOriginY								screenSizeX*${twothirds};screenSizeY
 alias left-fat 			move screenOriginX;screenOriginY								screenSizeX*${fat};screenSizeY
 alias center-third		move screenOriginX+screenSizeX*(1-${third})/2;screenOriginY		screenSizeX*${third};screenSizeY
 alias center-half		move screenOriginX+screenSizeX*(1-${half})/2;screenOriginY		screenSizeX*${half};screenSizeY
+alias center-twothirds	move screenOriginX+screenSizeX*(1-${twothirds})/2;screenOriginY	screenSizeX*${twothirds};screenSizeY
 alias center-fat 		move screenOriginX+screenSizeX*(1-${fat})/2;screenOriginY		screenSizeX*${fat};screenSizeY
 alias center-fat-2		move screenOriginX-50+screenSizeX*(1-${fat})/2;screenOriginY	screenSizeX*${fat};screenSizeY
 alias center-fat-3		move screenOriginX+50+screenSizeX*(1-${fat})/2;screenOriginY	screenSizeX*${fat};screenSizeY
 alias center-full		move screenOriginX;screenOriginY								screenSizeX;screenSizeY
 alias right-third 		move screenOriginX+screenSizeX*(1-${third});screenOriginY		screenSizeX*${third};screenSizeY
 alias right-half 		move screenOriginX+screenSizeX*(1-${half});screenOriginY		screenSizeX*${half};screenSizeY
+alias right-twothirds	move screenOriginX+screenSizeX*(1-${twothirds});screenOriginY	screenSizeX*${twothirds};screenSizeY
 alias right-fat 		move screenOriginX+screenSizeX*(1-${fat});screenOriginY			screenSizeX*${fat};screenSizeY
 
 # Montior Layouts
@@ -52,7 +56,7 @@ bind end:alt;cmd 	layout 2monitor
 bind s:alt;cmd 		focus 'Sublime Text'
 bind t:alt;cmd		focus 'iTerm2'
 bind c:alt;cmd		focus 'Google Chrome'
-bind right:alt;cmd	chain ${right-fat} | ${right-half} | ${right-third} | ${left-half} next
-bind left:alt;cmd	chain ${left-fat} | ${left-half} | ${left-third} | ${right-half} previous
+bind right:alt;cmd	chain ${right-fat} | ${right-twothirds} | ${right-half} | ${right-third} | ${left-half} next
+bind left:alt;cmd	chain ${left-fat} | ${left-twothirds} | ${left-half} | ${left-third} | ${right-half} previous
 bind up:alt;cmd		chain ${center-fat} | ${center-full} | ${center-fat-2} | ${center-fat-3}
 bind pad0:alt;cmd	throw next
