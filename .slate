@@ -19,7 +19,7 @@ alias m-dell 		0
 
 # Position Aliases
 alias third 	0.4
-alias half 		0.55
+alias half 		0.5
 alias fat 		0.8
 
 alias left-third		move screenOriginX;screenOriginY								screenSizeX*${third};screenSizeY
@@ -48,6 +48,7 @@ default 2monitor							resolutions:${m-dell};${m-laptop};
 
 # Bind
 bind end:alt;cmd 	layout 2monitor
+
 bind s:alt;cmd 		focus 'Sublime Text'
 bind t:alt;cmd		focus 'iTerm2'
 bind c:alt;cmd		focus 'Google Chrome'
