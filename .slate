@@ -58,5 +58,7 @@ bind t:alt;cmd		focus 'iTerm2'
 bind c:alt;cmd		focus 'Google Chrome'
 bind right:alt;cmd	chain ${right-fat} | ${right-twothirds} | ${right-half} | ${right-third} | ${left-half} next
 bind left:alt;cmd	chain ${left-fat} | ${left-twothirds} | ${left-half} | ${left-third} | ${right-half} previous
-bind up:alt;cmd		chain ${center-fat} | ${center-full} | ${center-fat-2} | ${center-fat-3}
-bind pad0:alt;cmd	throw next
+bind up:alt;cmd		chain ${center-fat} | ${center-full}
+bind down:alt;cmd	throw next
+bind right:cmd;shift	nudge +50 +0
+bind left:cmd;shift		nudge -50 +0
