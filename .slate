@@ -45,20 +45,29 @@ layout 2monitor 'iTerm2':REPEAT					${left-fat} ${m-dell}
 layout 2monitor 'Spotify':REPEAT				${right-half} ${m-laptop}
 layout 2monitor 'Activity Monitor'				${right-third} ${m-laptop}
 layout 2monitor 'Google Chrome':REPEAT_LAST		${right-fat} ${m-dell} | ${left-fat} ${m-laptop} | ${center-fat-2} ${m-laptop} | ${center-fat} ${m-laptop} | ${center-fat-3} ${m-laptop}
+layout 2monitor 'Sequel Pro':REPEAT 			${right-half} ${m-laptop}
+
+layout laptop 	'Sublime Text':REPEAT 			${center-fat-2} | ${center-fat} | ${center-fat-3}
+layout laptop 	'iTerm2':REPEAT 				${left-fat}
+layout laptop 	'Spotify':REPEAT				${right-half}
+layout laptop 	'Activity Monitor'				${right-third}
+layout laptop 	'Google Chrome':REPEAT_LAST		${left-fat} | ${center-fat-2} | ${center-fat} | ${center-fat-3}
+layout laptop 	'Sequel Pro':REPEAT 			${right-half}
+
 
 # Default Layouts
 default 2monitor							resolutions:${m-dell};${m-laptop};
 
-
 # Bind
 bind end:alt;cmd 	layout 2monitor
+bind .:alt;cmd		layout laptop
 
 bind s:alt;cmd 		focus 'Sublime Text'
 bind t:alt;cmd		focus 'iTerm2'
 bind c:alt;cmd		focus 'Google Chrome'
-bind right:alt;cmd	chain ${right-fat} | ${right-twothirds} | ${right-half} | ${right-third} | ${left-half} next
-bind left:alt;cmd	chain ${left-fat} | ${left-twothirds} | ${left-half} | ${left-third} | ${right-half} previous
+bind right:alt;cmd	chain ${right-fat} | ${right-twothirds} | ${right-half} | ${right-third}
+bind left:alt;cmd	chain ${left-fat} | ${left-twothirds} | ${left-half} | ${left-third}
 bind up:alt;cmd		chain ${center-fat} | ${center-full}
 bind down:alt;cmd	throw next
-bind right:cmd;shift	nudge +50 +0
-bind left:cmd;shift		nudge -50 +0
+bind right:alt;shift;cmd	nudge +50 +0
+bind left:alt;shift;cmd		nudge -50 +0
