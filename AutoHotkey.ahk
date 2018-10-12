@@ -5,6 +5,7 @@
 
 !^Left::SnapShrinkLeft()
 !^Right::SnapShrinkRight()
+!^Up::FullScreen()
 
 SnapShrinkLeft() {
 	SysGet, WorkArea, MonitorWorkArea
@@ -20,6 +21,8 @@ SnapShrinkLeft() {
 		ToWidth := WorkAreaWidth * 0.6
 	} else if (WinWidth > WorkAreaWidth * 0.5) {
 		ToWidth := WorkAreaWidth * 0.5
+	} else if (WinWidth > WorkAreaWidth * 0.3) {
+		ToWidth := WorkAreaWidth * 0.3
 	} else {
 		ToWidth := WorkAreaWidth * 0.9
 	}
@@ -45,10 +48,20 @@ SnapShrinkRight() {
 	} else if (WinWidth > WorkAreaWidth * 0.5) {
 		ToX := WorkAreaRight - WorkAreaWidth * 0.5
 		ToWidth := WorkAreaWidth * 0.5
+	} else if (WinWidth > WorkAreaWidth * 0.3) {
+		ToX := WorkAreaRight - WorkAreaWidth * 0.3
+		ToWidth := WorkAreaWidth * 0.3
 	} else {
 		ToX := WorkAreaRight - WorkAreaWidth * 0.9
 		ToWidth := WorkAreaWidth * 0.9
 	}
 
 	WinMove, A,, ToX, 0, ToWidth, WorkAreaHeight
+}
+
+FullScreen() {
+	SysGet, WorkArea, MonitorWorkArea
+	WorkAreaWidth := WorkAreaRight - WorkAreaLeft
+	WorkAreaHeight := WorkAreaBottom - WorkAreaTop
+	WinMove, A,, WorkAreaLeft, WorkAreaTop, WorkAreaWidth, WorkAreaHeight
 }
