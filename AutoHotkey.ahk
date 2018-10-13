@@ -6,7 +6,17 @@
 !^Left::SnapShrinkLeft()
 !^Right::SnapShrinkRight()
 !^Up::FullScreen()
+!^R::DisableTouch()
+!^T::EnableTouch()
 
+EnableTouch() {
+	MsgBox, Enabling Touch Screen in 3 seconds...
+	RunWait, DevManView.exe /enable "HID-compliant touch screen", C:\Program Files\DevManView
+}
+DisableTouch() {
+	MsgBox, Enabling Redwood Mode in 3 seconds...
+	RunWait, DevManView.exe /disable "HID-compliant touch screen", C:\Program Files\DevManView
+}	
 SnapShrinkLeft() {
 	SysGet, WorkArea, MonitorWorkArea
 	WinGetPos, WinX, WinY, WinWidth, WinHeight, A
