@@ -6,6 +6,7 @@
 !^Left::SnapShrinkLeft()
 !^Right::SnapShrinkRight()
 !^Up::FullScreen()
+!^Down::Minimize()
 !^R::DisableTouch()
 !^T::EnableTouch()
 
@@ -16,62 +17,64 @@ EnableTouch() {
 DisableTouch() {
 	MsgBox, Enabling Redwood Mode in 3 seconds...
 	RunWait, DevManView.exe /disable "HID-compliant touch screen", C:\Program Files\DevManView
+}
+_GetNextShrinkWidth(WinWidth, WorkAreaWidth) {
+	if (WinWidth > WorkAreaWidth * 0.65) {
+		Scale = 0.65
+	} else if (WinWidth > WorkAreaWidth * 0.5) {
+		Scale = 0.5
+	} else if (WinWidth > WorkAreaWidth * 0.35) {
+		Scale = 0.35
+	} else {
+		Scale = 0.9
+	}
+
+	return Scale
 }	
 SnapShrinkLeft() {
 	SysGet, WorkArea, MonitorWorkArea
+	SysGet, WinXBorder, 32
+	SysGet, WinYBorder, 33
 	WinGetPos, WinX, WinY, WinWidth, WinHeight, A
 	WorkAreaWidth := WorkAreaRight - WorkAreaLeft
-	WorkAreaHeight := WorkAreaBottom - WorkAreaTop
+	WorkAreaHeight := WorkAreaBottom - WorkAreaTop 
 
-	if (WinX <> WorkAreaLeft) {
-		ToWidth := WorkAreaWidth * 0.9
-	} else if (WinWidth > WorkAreaWidth * 0.8) {
-		ToWidth := WorkAreaWidth * 0.8
-	} else if (WinWidth > WorkAreaWidth * 0.6) {
-		ToWidth := WorkAreaWidth * 0.6
-	} else if (WinWidth > WorkAreaWidth * 0.5) {
-		ToWidth := WorkAreaWidth * 0.5
-	} else if (WinWidth > WorkAreaWidth * 0.3) {
-		ToWidth := WorkAreaWidth * 0.3
+	if (WinX + WinXBorder <> WorkAreaLeft) {
+		Scale = 0.9
 	} else {
-		ToWidth := WorkAreaWidth * 0.9
+		Scale := _GetNextShrinkWidth(WinWidth - 2*WinXBorder, WorkAreaWidth)
 	}
-
-	WinMove, A,, WorkAreaLeft, 0, ToWidth, WorkAreaHeight
+	ToWidth := WorkAreaWidth*Scale + 2*WinXBorder
+	;MsgBox, %WinWidth% %WorkAreaWidth% %ToWidth%
+	WinMove, A,, WorkAreaLeft - WinXBorder, 0, ToWidth, WorkAreaHeight + WinYBorder
 }
 SnapShrinkRight() {
 	SysGet, WorkArea, MonitorWorkArea
+	SysGet, WinXBorder, 32
+	SysGet, WinYBorder, 33
 	WinGetPos, WinX, WinY, WinWidth, WinHeight, A
 	WorkAreaWidth := WorkAreaRight - WorkAreaLeft
 	WorkAreaHeight := WorkAreaBottom - WorkAreaTop
 	WinRight := WinX + WinWidth
 
 	if (WinRight < WorkAreaRight - 1) {
-		ToX := WorkAreaRight - WorkAreaWidth * 0.9
-		ToWidth := WorkAreaWidth * 0.9
-	} else if (WinWidth > WorkAreaWidth * 0.8) {
-		ToX := WorkAreaRight - WorkAreaWidth * 0.8
-		ToWidth := WorkAreaWidth * 0.8
-	} else if (WinWidth > WorkAreaWidth * 0.6) {
-		ToX := WorkAreaRight - WorkAreaWidth * 0.6
-		ToWidth := WorkAreaWidth * 0.6
-	} else if (WinWidth > WorkAreaWidth * 0.5) {
-		ToX := WorkAreaRight - WorkAreaWidth * 0.5
-		ToWidth := WorkAreaWidth * 0.5
-	} else if (WinWidth > WorkAreaWidth * 0.3) {
-		ToX := WorkAreaRight - WorkAreaWidth * 0.3
-		ToWidth := WorkAreaWidth * 0.3
+		Scale = 0.9
 	} else {
-		ToX := WorkAreaRight - WorkAreaWidth * 0.9
-		ToWidth := WorkAreaWidth * 0.9
+		Scale := _GetNextShrinkWidth(WinWidth - 2*WinXBorder, WorkAreaWidth)
 	}
-
-	WinMove, A,, ToX, 0, ToWidth, WorkAreaHeight
+	ToX := WorkAreaRight - WorkAreaWidth*Scale - WinXBorder
+	ToWidth := WorkAreaWidth*Scale + 2*WinXBorder
+	WinMove, A,, ToX, 0, ToWidth, WorkAreaHeight + WinYBorder
 }
 
 FullScreen() {
 	SysGet, WorkArea, MonitorWorkArea
-	WorkAreaWidth := WorkAreaRight - WorkAreaLeft
-	WorkAreaHeight := WorkAreaBottom - WorkAreaTop
-	WinMove, A,, WorkAreaLeft, WorkAreaTop, WorkAreaWidth, WorkAreaHeight
+	SysGet, WinXBorder, 32
+	SysGet, WinYBorder, 33
+	WorkAreaWidth := WorkAreaRight - WorkAreaLeft + 2*WinXBorder
+	WorkAreaHeight := WorkAreaBottom - WorkAreaTop + WinYBorder
+	WinMove, A,, WorkAreaLeft - WinXBorder, WorkAreaTop, WorkAreaWidth, WorkAreaHeight
+}
+Minimize() {
+	WinMinimize, A
 }
