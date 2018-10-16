@@ -38,11 +38,12 @@ SnapShrinkLeft() {
 	WinGetPos, WinX, WinY, WinWidth, WinHeight, A
 	WorkAreaWidth := WorkAreaRight - WorkAreaLeft
 	WorkAreaHeight := WorkAreaBottom - WorkAreaTop 
+	WinGet, WinMinMax, MinMax, A
 
-	if (WinX + WinXBorder <> WorkAreaLeft) {
-		Scale = 0.9
-	} else {
-		Scale := _GetNextShrinkWidth(WinWidth - 2*WinXBorder, WorkAreaWidth)
+	Scale := _GetNextShrinkWidth(WinWidth - 2*WinXBorder, WorkAreaWidth)
+
+	if (WinMinMax = 1) {
+		WinRestore, A
 	}
 	ToWidth := WorkAreaWidth*Scale + 2*WinXBorder
 	;MsgBox, %WinWidth% %WorkAreaWidth% %ToWidth%
@@ -57,10 +58,10 @@ SnapShrinkRight() {
 	WorkAreaHeight := WorkAreaBottom - WorkAreaTop
 	WinRight := WinX + WinWidth
 
-	if (WinRight < WorkAreaRight - 1) {
-		Scale = 0.9
-	} else {
-		Scale := _GetNextShrinkWidth(WinWidth - 2*WinXBorder, WorkAreaWidth)
+	Scale := _GetNextShrinkWidth(WinWidth - 2*WinXBorder, WorkAreaWidth)
+	
+	if (WinMinMax = 1) {
+		WinRestore, A
 	}
 	ToX := WorkAreaRight - WorkAreaWidth*Scale - WinXBorder
 	ToWidth := WorkAreaWidth*Scale + 2*WinXBorder
