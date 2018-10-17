@@ -57,6 +57,7 @@ SnapShrinkRight() {
 	WorkAreaWidth := WorkAreaRight - WorkAreaLeft
 	WorkAreaHeight := WorkAreaBottom - WorkAreaTop
 	WinRight := WinX + WinWidth
+	WinGet, WinMinMax, MinMax, A
 
 	Scale := _GetNextShrinkWidth(WinWidth - 2*WinXBorder, WorkAreaWidth)
 	
