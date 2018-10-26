@@ -9,7 +9,9 @@ A fun shell
 
 1. Run `sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 2. Copy `gerbus.zsh-theme` to `~/.oh-my-zsh/custom`
+(ToDo: make the server name a color based on the name)
 3. Edit `~/.zshrc` and change the `ZSH_THEME` to `gerbus`
+
 
 ### iterm2
 
