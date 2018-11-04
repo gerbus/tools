@@ -1,19 +1,19 @@
 # gerbus.zsh-theme
 
 # Use with a dark background and 256-color terminal!
-# Meant for people with RVM and git. Tested only on OS X 10.7.
+# Meant for people with oh-my-zsh and git.
 
 # You can set your computer name in the ~/.box-name file if you want.
-
-# Borrowing shamelessly from these oh-my-zsh themes:
-#   fino-time
-#   bira
-#   robbyrussell
-#
-# Also borrowing from http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
-
 function box_name {
     [ -f ~/.box-name ] && cat ~/.box-name || echo $HOST || echo $SHORT_HOST
+}
+# When you ssh to another box with this theme, see the color change! Based on the first character only
+function box_color {
+   printf "%03d\n" "'$(box_name)[0,1]"
+}
+# When you change user, see the color change! Based on the first character only
+function user_color {
+   printf "%03d\n" "'$USER[0,1]"
 }
 
 unset -f work_in_progress # Delete the default function
@@ -41,7 +41,7 @@ local timezone='$(local_timezone)'
 
 PROMPT="
 %{$FG[255]%}╭─────%{$reset_color%}
- %{$FG[063]%}%n%{$reset_color%} at %{$FG[074]%}$(box_name)%{$reset_color%}
+ %{$FG[$(user_color)]%}%n%{$reset_color%} at %{$FG[$(box_color)]%}$(box_name)%{$reset_color%}
  %{$terminfo[bold]$FG[051]%}${current_dir}%{$reset_color%}
 %{$FG[255]%}╰─────%{$reset_color%} ${git_info}${is_wip} %{$fg[159]%}➭%{$reset_color%} "
 
