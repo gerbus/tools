@@ -15,9 +15,9 @@ function char_to_color_map {
 }
 function color_code {
    #printf '%03d\n' "'$1[0,1]"
-   printf -v char_code1 "%d\n" "'$1[0,1]"
-   printf -v char_code2 "%d\n" "'$1[-1]"
-   (( avg = ($char_code1 + $char_code2) / 2 ))
+   char_code1=$(printf "%d\n" "'$1[0,1]")
+   char_code2=$(printf "%d\n" "'$1[-1]")
+   ((avg=($char_code1+$char_code2)/2))
    printf '%03d\n' "$(char_to_color_map $avg)"
 }
 
