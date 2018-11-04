@@ -39,10 +39,10 @@ local is_wip='$(work_in_progress)'
 local timezone='$(local_timezone)'
 
 PROMPT="
-%{$FG[255]%}╭─────%{$reset_color%}
+%{$FG[$(color_code $(box_name))]%}╭─────%{$reset_color%}
  %{$FG[$(color_code $USER)]%}%n%{$reset_color%} at %{$FG[$(color_code $(box_name))]%}$(box_name)%{$reset_color%}
  %{$terminfo[bold]$FG[051]%}${current_dir}%{$reset_color%}
-%{$FG[255]%}╰─────%{$reset_color%} ${git_info}${is_wip} %{$fg[159]%}➭%{$reset_color%} "
+%{$FG[$(color_code $(box_name))]%}╰─────%{$reset_color%} ${git_info}${is_wip} %{$fg[159]%}➭%{$reset_color%} "
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$FG[136]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
