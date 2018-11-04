@@ -8,11 +8,17 @@ function box_name {
     [ -f ~/.box-name ] && cat ~/.box-name || echo $HOST || echo $SHORT_HOST
 }
 
-# Get a color code based on the first character of a passed string
-# When you ssh to another box with this theme, see the color change! Based on the first character only
-# When you change user, see the color change! Based on the first character only
+# Get a color code based on the first and last characters of a passed string
+function char_to_color_map {
+   # map a number in range (33,126) to range (124,231)
+   echo "$(( 124 + (231 - 124) * ($1 - 33) / (126 - 33) ))"
+}
 function color_code {
-   printf "%03d\n" "'$1[0,1]"
+   #printf '%03d\n' "'$1[0,1]"
+   printf -v char_code1 "%d\n" "'$1[0,1]"
+   printf -v char_code2 "%d\n" "'$1[-1]"
+   (( avg = ($char_code1 + $char_code2) / 2 ))
+   printf '%03d\n' "$(char_to_color_map $avg)"
 }
 
 unset -f work_in_progress # Delete the default function
