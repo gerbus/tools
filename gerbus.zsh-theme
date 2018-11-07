@@ -10,8 +10,24 @@ function box_name {
 
 # Get a color code based on the first and last characters of a passed string
 function char_to_color_map {
-   # map a number in range (33,126) to range (124,231)
-   echo "$(( 124 + (231 - 124) * ($1 - 33) / (126 - 33) ))"
+   # map a number in range [65,122] (alpha char) 
+   #   to range segments [34,51] [106,123] [124,141] [196,231] (bright colors)
+   a1=65
+   a2=122
+
+   # map to [1,90] as intermediate step
+   b1=1
+   b2=90
+   y=$(( b1 + ($1 - a1) * (b2 - b1) / (a2 - a1) ))
+
+   # map to segments
+   if ((y <= 18)); then
+     echo "$(( $y + 33 ))"
+   elif ((y <= 54)); then
+     echo "$(( $y + 87 ))"
+   else
+     echo "$(( $y + 141 ))"
+   fi
 }
 function color_code {
    #printf '%03d\n' "'$1[0,1]"
