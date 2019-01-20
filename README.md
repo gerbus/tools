@@ -22,6 +22,13 @@ An advanced terminal
 4. Go to Keys and make [these changes](https://stackoverflow.com/questions/6205157/iterm-2-how-to-set-keyboard-shortcuts-to-jump-to-beginning-end-of-line)
 5. Go to colors and import [this file](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/ForestBlue.itermcolors)
 
+
+### Sublime Text 3
+1. Download and install
+2. Install Package Manager
+3. Install and enable Package "color scheme - Gerbus"
+4. Paste [`Preferences.sublime-settings`](https://raw.githubusercontent.com/gerbus/tools/master/Preferences.sublime-settings) into `~/Library/Application Support/Sublime Text 3/Packages/User`
+
 ## Mac Environments
 
 ### slate
