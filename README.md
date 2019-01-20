@@ -20,7 +20,7 @@ An advanced terminal
 2. Open Preferences > Profiles
 3. Rename "Default" to something better
 4. Go to Keys and make [these changes](https://stackoverflow.com/questions/6205157/iterm-2-how-to-set-keyboard-shortcuts-to-jump-to-beginning-end-of-line)
-5. Go to colors and import [this file](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/schemes/ForestBlue.itermcolors)
+5. Go to colors and import [this file](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/ForestBlue.itermcolors)
 
 ## Mac Environments
 
