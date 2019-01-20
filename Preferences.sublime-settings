@@ -1,0 +1,14 @@
+{
+	"auto_match_enabled": false,
+	"color_scheme": "Packages/Color Scheme - Gerbus/Gerbus.sublime-color-scheme",
+	"detect_indentation": false,
+	"fade_fold_buttons": false,
+	"font_size": 11,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}

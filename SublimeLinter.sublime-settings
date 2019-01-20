@@ -1,0 +1,14 @@
+// SublimeLinter Settings - User
+{
+	"paths": {
+	  "linux": [],
+	  "osx": [
+	    "/usr/local/bin/node"
+	  ],
+	  "windows": []
+	},
+	"syntax_map": {
+		"javascript (naomi)": "javascript",
+	},
+	"lint_mode": "load_save"
+}
