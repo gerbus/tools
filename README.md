@@ -17,7 +17,7 @@ A fun shell
 An advanced terminal
 
 1. Download and install iterm2
-2. Open Preferences >> Profiles
+2. Open Preferences > Profiles
 3. Rename "Default" to something better
 4. Go to Keys and make [these changes](https://stackoverflow.com/questions/6205157/iterm-2-how-to-set-keyboard-shortcuts-to-jump-to-beginning-end-of-line)
 5. Go to colors and import [this file](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/schemes/ForestBlue.itermcolors)
