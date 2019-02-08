@@ -39,6 +39,11 @@ A window management tool
 
 ## Windows Environments
 
+### cygwin
+A linux terminal for windows
+
+1. https://medium.com/@alllexsm/how-to-install-z-shell-zsh-on-cygwin-dd9ee380d783
+
 ### autohotkey
 A hotkey configurator that serves as a great window management tool
 
