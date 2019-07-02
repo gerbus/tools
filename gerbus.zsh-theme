@@ -61,7 +61,7 @@ local is_wip='$(work_in_progress)'
 local timezone='$(local_timezone)'
 
 PROMPT="
-%{$FG[$(color_code $(box_name))]%}╭─────%{$reset_color%}
+%{$FG[$(color_code $(box_name))]%}╭─────%D{%F %T}%{$reset_color%}
  %{$FG[$(color_code $USER)]%}%n%{$reset_color%} at %{$FG[$(color_code $(box_name))]%}$(box_name)%{$reset_color%}
  %{$terminfo[bold]$FG[051]%}${current_dir}%{$reset_color%}
 %{$FG[$(color_code $(box_name))]%}╰─────%{$reset_color%} ${git_info}${is_wip} %{$fg[159]%}➭%{$reset_color%} "
