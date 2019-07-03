@@ -21,6 +21,7 @@ An advanced terminal
 3. Rename "Default" to something better
 4. Go to Keys and make [these changes](https://stackoverflow.com/questions/6205157/iterm-2-how-to-set-keyboard-shortcuts-to-jump-to-beginning-end-of-line)
 5. Go to colors and import [this file](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/ForestBlue.itermcolors)
+6. Go to terminal and check `unlimited scrollback`
 
 
 ### Sublime Text 3
