@@ -48,3 +48,7 @@ A linux terminal for windows
 ### autohotkey
 A hotkey configurator that serves as a great window management tool
 
+## GIF Screencapture
+1. Capture screen with QuickTime
+2. Convert to GIF (update resolution in command below)
+> `ffmpeg -i /Users/chrisgerber/Pictures/Screengrabs/\#3550\ -\ mac-chrome.mov -s 1404x1176 -pix_fmt rgb24 -r 10 -f gif -filter:v "setpts=0.75*PTS" /Users/chrisgerber/Pictures/Screengrabs/\#3550\ -\ mac-chrome.gif`
