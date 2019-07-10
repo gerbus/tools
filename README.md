@@ -55,6 +55,8 @@ A hotkey configurator that serves as a great window management tool
 
 ## Git tricks
 ### Rebasing a branch
+[force-with-lease](https://blog.developer.atlassian.com/force-with-lease/) 
+[force after rebase](https://willi.am/blog/2014/08/12/the-dark-side-of-the-force-push/)
 1. `git rebase develop -i`
 2. Do some squashing and re-messaging
 3. `ggpush` if no changes have been pushed to `remote/origin` yet
