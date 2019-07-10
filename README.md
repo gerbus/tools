@@ -52,3 +52,11 @@ A hotkey configurator that serves as a great window management tool
 1. Capture screen with QuickTime
 2. Convert to GIF (update resolution in command below)
 > `ffmpeg -i /Users/chrisgerber/Pictures/Screengrabs/\#3550\ -\ mac-chrome.mov -s 1404x1176 -pix_fmt rgb24 -r 10 -f gif -filter:v "setpts=0.75*PTS" /Users/chrisgerber/Pictures/Screengrabs/\#3550\ -\ mac-chrome.gif`
+
+## Git tricks
+### Rebasing a branch
+1. `git rebase develop -i`
+2. Do some squashing and re-messaging
+3. `ggpush` if no changes have been pushed to `remote/origin` yet
+4. `git push origin <branchname> --force-with-lease` if some commits were already pushed `remote` before `rebase`
+
