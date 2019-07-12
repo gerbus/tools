@@ -6,3 +6,7 @@
 5. If also upgrading `rbenv` / `bundler`, do that now: `gem install bundler`. You can install an older version with `gem install bundler -N -v "<2.0"`.
 6. `gem install nokogiri -v '1.8.5' --source 'https://rubygems.org/'`
 7. `bundle install` or if wanting to use an older version of `rbenv` then `bundle _1.17.3_ install`.
+
+### Kill process LISTENing on port
+1. `lsof -n -i :8080` (replace :8080 with port in question)
+2. `kill -9 {pid}` (get PID from output of above command)
