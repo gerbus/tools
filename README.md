@@ -60,5 +60,5 @@ A hotkey configurator that serves as a great window management tool
 1. `git rebase develop -i`
 2. Do some squashing and re-messaging
 3. `ggpush` if no changes have been pushed to `remote/origin` yet
-4. `git push origin <branchname> --force-with-lease` if some commits were already pushed `remote` before `rebase`
+4. `git push origin <branchname> --force-with-lease` if some commits were already pushed to `remote` before `rebase`
 
