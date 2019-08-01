@@ -1,0 +1,6 @@
+[
+  { "keys": ["ctrl+1"], "command": "goto_definition" },
+  { "keys": ["ctrl+2"], "command": "goto_usage" },
+  { "keys": ["ctrl+3"], "command": "goto_reference" },
+  { "keys": ["super+shift+r"], "command": "reveal_in_side_bar"}
+]
