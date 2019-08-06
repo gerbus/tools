@@ -54,7 +54,12 @@ A hotkey configurator that serves as a great window management tool
 
 ## Workflow Tips
 ### GIF Screencapture
+Prerequisite: Install `ffmpeg`
+
 1. Capture screen with QuickTime
+  1. Open QuickTime
+  2. File > New Screen Recording
+  3. Once recording area selected and recording started, click the stop icon in your mac toolbar to end
 2. Convert to GIF
 > `ffmpeg -i /Users/chrisgerber/Pictures/Screengrabs/\#3550\ -\ mac-chrome.mov -pix_fmt rgb24 -r 10 -f gif -filter:v "setpts=0.75*PTS" /Users/chrisgerber/Pictures/Screengrabs/\#3550\ -\ mac-chrome.gif`
 
