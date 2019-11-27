@@ -20,7 +20,11 @@ An advanced terminal
 1. Download and install iterm2
 2. Open Preferences > Profiles
 3. Rename "Default" to something better
-4. Go to Keys and make [these changes](https://stackoverflow.com/a/9611698/303659)
+4. Go to Keys and make these changes:
+    * CMD-left: Send Hex Code: 0x01
+    * CMD-right: Send Hex Code: 0x05
+    * OPTION-left: Send Esc Sequence: [1;5D
+    * OPTION-right: Send Esc Sequence: [1;5C
 5. Go to colors and import [this file](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/ForestBlue.itermcolors)
 6. Go to terminal and check `unlimited scrollback`, and `silence bell`
 
