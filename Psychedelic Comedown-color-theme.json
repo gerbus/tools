@@ -137,12 +137,21 @@
 
 
 		{
-			"name": "HTML or JSX Entity",
+			"name": "HTML Entity",
 			"scope": [
 				"entity.name.tag"
 			],
 			"settings": {
 				"foreground": "#00ccff"
+			}
+		},
+		{
+			"name": "JSX Components",
+			"scope": [
+				"support.class.component.js"
+			],
+			"settings": {
+				"foreground": "#00ddaa"
 			}
 		},
 		{
@@ -154,6 +163,7 @@
 				"foreground": "#0088ff"
 			}
 		},
+
 
 
 
@@ -249,6 +259,8 @@
 		},
 
 
+
+
 		{
 			"name": "CSS Selectors",
 			"scope": [
@@ -296,6 +308,8 @@
 				"foreground": "#df8040"
 			}
 		},
+
+
 
 
 		{
