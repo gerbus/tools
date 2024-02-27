@@ -72,6 +72,12 @@ alias right-third-2 	    move screenOriginX+screenSizeX*(1-${third});screenOrigi
 alias right-half 		      move screenOriginX+screenSizeX*(1-${half});screenOriginY		                screenSizeX*${half};screenSizeY
 alias right-half-2 		    move screenOriginX-50+screenSizeX*(1-${half});screenOriginY		                screenSizeX*${half};screenSizeY
 alias right-twothirds	    move screenOriginX+screenSizeX*(1-${twothirds});screenOriginY	                screenSizeX*${twothirds};screenSizeY
+alias right-twothirds-2	    move screenOriginX-50+screenSizeX*(1-${twothirds});screenOriginY	                screenSizeX*${twothirds};screenSizeY
+alias right-twothirds-3	    move screenOriginX-100+screenSizeX*(1-${twothirds});screenOriginY	                screenSizeX*${twothirds};screenSizeY
+alias right-twothirds-4	    move screenOriginX-150+screenSizeX*(1-${twothirds});screenOriginY	                screenSizeX*${twothirds};screenSizeY
+alias right-twothirds-5	    move screenOriginX-200+screenSizeX*(1-${twothirds});screenOriginY	                screenSizeX*${twothirds};screenSizeY
+alias right-twothirds-6	    move screenOriginX-250+screenSizeX*(1-${twothirds});screenOriginY	                screenSizeX*${twothirds};screenSizeY
+alias right-threequarters move screenOriginX+screenSizeX*(1-${threequarters});screenOriginY	                screenSizeX*${threequarters};screenSizeY
 alias right-fat 		      move screenOriginX+screenSizeX*(1-${fat});screenOriginY			                    screenSizeX*${fat};screenSizeY
 alias right-fat-2 		    move screenOriginX-50+screenSizeX*(1-${fat});screenOriginY			                screenSizeX*${fat}-50;screenSizeY
 alias right-fat-3 		    move screenOriginX-100+screenSizeX*(1-${fat});screenOriginY			                screenSizeX*${fat}-100;screenSizeY
@@ -85,6 +91,7 @@ alias right-nearfull-5	  move screenOriginX-200+screenSizeX*(1-${nearfull});scre
 alias right-nearfull-6	  move screenOriginX-250+screenSizeX*(1-${nearfull});screenOriginY	                screenSizeX*${nearfull};screenSizeY
 
 
+####
 # Montior Layouts
 layout laptop 	'Sublime Text':REPEAT 			      ${center-nearfull-2} | ${center-nearfull} | ${center-nearfull-3}
 layout laptop 	'Code[':REPEAT 			              ${right-nearfull} | ${right-nearfull-2} | ${right-nearfull-3} | ${left-nearfull}
@@ -98,6 +105,7 @@ layout laptop 	'Google Chat'				              ${left-fat}
 layout laptop   'Finder'                          ${right-fat}
 layout laptop   'Notion':REPEAT                   ${right-nearfull} | ${right-nearfull-2} | ${right-nearfull-3} | ${left-nearfull} | ${right-fat} | ${right-fat-2} | ${right-fat-3} | ${right-fat-4}
 
+# "main" screen is the external one, and right of the laptop
 layout laptop-*ext 'Sublime Text':REPEAT			        ${left-threequarters} ${m-right} | ${left-threequarters-2} ${m-right} | ${left-threequarters-3} ${m-right} | ${left-threequarters-4} ${m-right}
 layout laptop-*ext 'Code':REPEAT			                ${left-threequarters} ${m-right} | ${left-threequarters-2} ${m-right} | ${left-threequarters-3} ${m-right} | ${left-threequarters-4} ${m-right}
 layout laptop-*ext 'iTerm2':REPEAT					          ${right-quarter} ${m-right}
@@ -105,12 +113,13 @@ layout laptop-*ext 'Spotify':REPEAT				            ${right-fat} ${m-left}
 layout laptop-*ext 'Activity Monitor'				          ${right-quarter} ${m-left}
 layout laptop-*ext 'Google Chrome':REPEAT_LAST		    ${left-threequarters} ${m-right} | ${left-threequarters-2} ${m-right} | ${left-threequarters-3} ${m-right} | ${left-threequarters-4} ${m-right}
 layout laptop-*ext 'Sequel Pro':REPEAT 			          ${right-half} ${m-left}
-layout laptop-*ext 'Slack'							              ${right-half} ${m-right}
+layout laptop-*ext 'Slack'							              ${left-threequarters} ${m-left}
 layout laptop-*ext 'Google Chat'				              ${right-half} ${m-right}
 layout laptop-*ext 'Finder'                           ${right-fat} ${m-left}
 layout laptop-*ext 'Todoist':REPEAT		                ${right-half-2} ${m-right}
 layout laptop-*ext 'Zoom'		                          ${full} ${m-left}
-layout laptop-*ext 'Notion'                           ${right-nearfull} ${m-left} | ${right-nearfull-2} ${m-left} | ${right-nearfull-3} ${m-left} | ${right-nearfull-4} ${m-left}
+layout laptop-*ext 'Notion'                           ${right-nearfull} ${m-right} | ${right-nearfull-2} ${m-right} | ${right-nearfull-3} ${m-left} | ${right-nearfull-4} ${m-left}
+
 
 layout *laptop-ext 'Sublime Text':REPEAT         ${center-nearfull} ${m-left} | ${center-nearfull-2} ${m-left} | ${center-nearfull-3} ${m-left}
 layout *laptop-ext 'Code':REPEAT                 ${center-nearfull} ${m-left} | ${center-nearfull-2} ${m-left} | ${center-nearfull-3} ${m-left} | ${center-nearfull-4} ${m-left}
@@ -124,29 +133,35 @@ layout *laptop-ext 'Google Chat'                 ${left-fat} ${m-right}
 layout *laptop-ext 'Finder'                      ${right-fat} ${m-right}
 layout *laptop-ext 'Todoist':REPEAT              ${left-fat} ${m-right}
 
-layout laptop-*ext-90 'zoom.us'                          ${full} ${m-left} | ${full} ${m-right}
-layout laptop-*ext-90 'Google Meet'                     ${full} ${m-left}
+# Home-office setup
+layout laptop-*ext-90 'zoom.us'                           ${left-nearfull} ${m-left} | ${right-nearfull} ${m-left}
+layout laptop-*ext-90 'Google Meet'                       ${full} ${m-left}
 layout laptop-*ext-90 'Spotify':REPEAT				            ${left-fat} ${m-left}
+layout laptop-*ext-90 'Whitenoise'                        move screenOriginX;screenOriginY screenSizeX*${fat};screenSizeY*${half} ${m-left}
+layout laptop-*ext-90 'Activity Monitor'				          ${right-twothirds} ${m-left}
+layout laptop-*ext-90 'Finder'                            ${right-fat} ${m-left} | ${right-fat-2} ${m-left} | ${right-fat-3} ${m-left} | ${right-fat-4} ${m-left} | ${right-fat-5} ${m-left}
+layout laptop-*ext-90 'Postman'                           ${right-nearfull} ${m-left}
+layout laptop-*ext-90 'qemu-system-x86_64'                ${right-third} ${m-left}
+layout laptop-*ext-90 'Sequel Pro':REPEAT 			          ${right-half} ${m-left}
+
 layout laptop-*ext-90 'Sublime Text':REPEAT			        ${center-nearfull} ${m-right} | ${center-nearfull-2} ${m-right} | ${center-nearfull-3} ${m-right}
 layout laptop-*ext-90 'Code':REPEAT			                ${full} ${m-right} | ${left-full-1} ${m-right} | ${left-full-2} ${m-right} | ${left-full-3} ${m-right}
-layout laptop-*ext-90 'Activity Monitor'				          ${right-twothirds} ${m-left}
 layout laptop-*ext-90 'Google Chrome':REPEAT_LAST		    ${left-fat} ${m-right} | ${left-fat-2} ${m-right} | ${left-fat-3} ${m-right} | ${left-fat-4} ${m-right} | ${left-fat-5} ${m-right} | ${left-fat-6} ${m-right} | ${left-fat-7} ${m-right} | ${left-fat-8} ${m-right}
-layout laptop-*ext-90 'Sequel Pro':REPEAT 			          ${right-half} ${m-left}
-layout laptop-*ext-90 'Finder'                           ${right-fat} ${m-left} | ${right-fat-2} ${m-left} | ${right-fat-3} ${m-left} | ${right-fat-4} ${m-left} | ${right-fat-5} ${m-left}
 layout laptop-*ext-90 'Linear'                           ${center-nearfull} ${m-right}
-layout laptop-*ext-90 'Postman'                          ${right-nearfull} ${m-left}
 layout laptop-*ext-90 'Notion'                           ${left-fat} ${m-right} | ${left-fat-2} ${m-right} | ${left-fat-3} ${m-right} | ${left-fat-4} ${m-right} | ${left-fat-5} ${m-right} | ${left-fat-6} ${m-right} | ${left-fat-7} ${m-right} | ${left-fat-8} ${m-right} | ${left-fat-9} ${m-right}
 layout laptop-*ext-90 'Android Studio'                  ${center-nearfull} ${m-right} | ${center-nearfull-2} ${m-right}
 layout laptop-*ext-90 'Xcode'                           ${center-nearfull} ${m-right} | ${center-nearfull-2} ${m-right}
-layout laptop-*ext-90 'qemu-system-x86_64'              ${right-third} ${m-left}
-layout laptop-*ext-90 'Simulator'                       ${right-third} ${m-90}
 layout laptop-*ext-90 'FSF'                             ${left-nearfull} ${m-right}
 layout laptop-*ext-90 'BSF'                             ${right-nearfull} ${m-right}
 layout laptop-*ext-90 'Incident Log'                    ${center-nearfull} ${m-right}
 layout laptop-*ext-90 'Culture Amp'                     ${center-nearfull} ${m-right}
-layout laptop-*ext-90 'Lattice'                         ${right-fat-3} ${m-right} | ${right-fat-2} ${m-right} | ${right-fat} ${m-right}
-layout laptop-*ext-90 'My Devs'                         ${left-fat-3} ${m-right} | ${left-fat-2} ${m-right} | ${left-fat} ${m-right}
+layout laptop-*ext-90 'Lattice'                         ${left-twothirds} ${m-right} | ${left-twothirds-2} ${m-right} | ${left-twothirds-3} ${m-right}
+layout laptop-*ext-90 'My Devs'                         ${right-twothirds} ${m-right} | ${right-twothirds-2} ${m-right} | ${right-twothirds-3} ${m-right} | ${right-twothirds-4} ${m-right} | ${right-twothirds-5} ${m-right} | ${right-twothirds-6} ${m-right}
+layout laptop-*ext-90 'Discovery'                       ${center-nearfull} ${m-right}
+layout laptop-*ext-90 'Google Calendar'                 ${right-threequarters} ${m-right}
+layout laptop-*ext-90 'xMatters'                        ${right-threequarters} ${m-right}
 
+layout laptop-*ext-90 'Simulator'                       ${right-third} ${m-90}
 layout laptop-*ext-90 'iTerm2':REPEAT					          ${full} ${m-90}
 layout laptop-*ext-90 'Google Chat'				              ${full} ${m-90}
 layout laptop-*ext-90 'Todoist'                         ${left-nearfull} ${m-90}
