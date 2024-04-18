@@ -38,14 +38,17 @@ alias left-threequarters-2 	  move screenOriginX+50;screenOriginY								       
 alias left-threequarters-3 	  move screenOriginX+100;screenOriginY								                screenSizeX*${threequarters};screenSizeY
 alias left-threequarters-4 	  move screenOriginX+150;screenOriginY								                screenSizeX*${threequarters};screenSizeY
 alias left-fat 			          move screenOriginX;screenOriginY								                screenSizeX*${fat};screenSizeY
-alias left-fat-2 		          move screenOriginX+50;screenOriginY								                screenSizeX*${fat};screenSizeY
-alias left-fat-3 		          move screenOriginX+100;screenOriginY								                screenSizeX*${fat};screenSizeY
-alias left-fat-4 		          move screenOriginX+150;screenOriginY								                screenSizeX*${fat};screenSizeY
-alias left-fat-5 		          move screenOriginX+200;screenOriginY								                screenSizeX*${fat};screenSizeY
-alias left-fat-6 		          move screenOriginX+250;screenOriginY								                screenSizeX*${fat};screenSizeY
-alias left-fat-7 		          move screenOriginX+300;screenOriginY								                screenSizeX*${fat};screenSizeY
-alias left-fat-8 		          move screenOriginX+350;screenOriginY								                screenSizeX*${fat};screenSizeY
-alias left-fat-9 		          move screenOriginX+400;screenOriginY								                screenSizeX*${fat};screenSizeY
+alias left-fat-2 		          move screenOriginX+40;screenOriginY								                screenSizeX*${fat};screenSizeY
+alias left-fat-3 		          move screenOriginX+80;screenOriginY								                screenSizeX*${fat};screenSizeY
+alias left-fat-4 		          move screenOriginX+120;screenOriginY								                screenSizeX*${fat};screenSizeY
+alias left-fat-5 		          move screenOriginX+160;screenOriginY								                screenSizeX*${fat};screenSizeY
+alias left-fat-6 		          move screenOriginX+200;screenOriginY								                screenSizeX*${fat};screenSizeY
+alias left-fat-7 		          move screenOriginX+240;screenOriginY								                screenSizeX*${fat};screenSizeY
+alias left-fat-8 		          move screenOriginX+280;screenOriginY								                screenSizeX*${fat};screenSizeY
+alias left-fat-9 		          move screenOriginX+320;screenOriginY								                screenSizeX*${fat};screenSizeY
+alias left-fat-10 		        move screenOriginX+360;screenOriginY								                screenSizeX*${fat};screenSizeY
+alias left-fat-11 		        move screenOriginX+400;screenOriginY								                screenSizeX*${fat};screenSizeY
+alias left-fat-12 		        move screenOriginX+440;screenOriginY								                screenSizeX*${fat};screenSizeY
 alias left-nearfull		    move screenOriginX;screenOriginY								                screenSizeX*${nearfull};screenSizeY
 alias left-full-1         move screenOriginX;screenOriginY                             screenSizeX-50;screenSizeY
 alias left-full-2         move screenOriginX;screenOriginY                             screenSizeX-100;screenSizeY
@@ -144,7 +147,7 @@ layout *laptop-ext 'Finder'                      ${right-fat} ${m-right}
 layout *laptop-ext 'Todoist':REPEAT              ${left-fat} ${m-right}
 
 
-# Home-office setup
+# (3 monitors) Home-office setup
 layout laptop-*ext-90 'zoom.us'                           ${left-nearfull} ${m-left} | ${right-nearfull} ${m-left}
 layout laptop-*ext-90 'Google Meet'                       ${full} ${m-left}
 layout laptop-*ext-90 'Spotify':REPEAT				            ${left-fat} ${m-left}
@@ -158,7 +161,7 @@ layout laptop-*ext-90 'Sequel Pro':REPEAT 			          ${right-half} ${m-left}
 
 layout laptop-*ext-90 'Sublime Text':REPEAT			        ${center-nearfull} ${m-right} | ${center-nearfull-2} ${m-right} | ${center-nearfull-3} ${m-right}
 layout laptop-*ext-90 'Code':REPEAT			                ${left-full-1} ${m-right} | ${left-full-2} ${m-right} | ${left-full-3} ${m-right}
-layout laptop-*ext-90 'Google Chrome':REPEAT_LAST		    ${left-fat} ${m-right} | ${left-fat-2} ${m-right} | ${left-fat-3} ${m-right} | ${left-fat-4} ${m-right} | ${left-fat-5} ${m-right} | ${left-fat-6} ${m-right} | ${left-fat-7} ${m-right} | ${left-fat-8} ${m-right}
+layout laptop-*ext-90 'Google Chrome':REPEAT		        ${left-fat} ${m-right} | ${left-fat-2} ${m-right} | ${left-fat-3} ${m-right} | ${left-fat-4} ${m-right} | ${left-fat-5} ${m-right} | ${left-fat-6} ${m-right} | ${left-fat-7} ${m-right} | ${left-fat-8} ${m-right} | ${left-fat-9} ${m-right} | ${left-fat-10} ${m-right} | ${left-fat-11} ${m-right} | ${left-fat-12} ${m-right}
 layout laptop-*ext-90 'Linear'                           ${center-nearfull} ${m-right}
 layout laptop-*ext-90 'Notion'                           ${left-fat} ${m-right} | ${left-fat-2} ${m-right} | ${left-fat-3} ${m-right} | ${left-fat-4} ${m-right} | ${left-fat-5} ${m-right} | ${left-fat-6} ${m-right} | ${left-fat-7} ${m-right} | ${left-fat-8} ${m-right} | ${left-fat-9} ${m-right}
 layout laptop-*ext-90 'Android Studio'                  ${right-full-1} ${m-right} | ${right-full-2} ${m-right}
