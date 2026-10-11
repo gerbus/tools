@@ -195,7 +195,7 @@ layout laptop-*ext 'Google Calendar'                  ${left-half} ${m-right}
 layout laptop-*ext 'Zip'                              ${left-fat} ${m-right} | ${left-fat-2} ${m-right} | ${left-fat-3} ${m-right}
 layout laptop-*ext 'Discovery'                     		${right-threequarters} ${m-right}
 layout laptop-*ext 'Fellow'                           ${left-half} ${m-right}
-
+layout laptop-*ext 'Photopea'                         ${left-twothirds} ${m-right}
 
 ########################
 # "main" screen is the laptop, and there's an external to the right
