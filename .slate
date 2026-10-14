@@ -134,7 +134,7 @@ layout laptop-*ext-90 'Linear'                           ${center-nearfull} ${m-
 layout laptop-*ext-90 'Notion'                           ${left-fat} ${m-right} | ${left-fat-2} ${m-right} | ${left-fat-3} ${m-right} | ${left-fat-4} ${m-right} | ${left-fat-5} ${m-right} | ${left-fat-6} ${m-right} | ${left-fat-7} ${m-right} | ${left-fat-8} ${m-right} | ${left-fat-9} ${m-right}
 layout laptop-*ext-90 'Preview'                         ${left-half} ${m-right} | ${left-half-2} ${m-right} | ${left-half-3} ${m-right} | ${left-half-4} ${m-right}
 layout laptop-*ext-90 'Vendor Conversations Log'        ${left-fat-3} ${m-right}
-layout laptop-*ext-90 'Vendor and Tool Catalog - Product-org' ${left-fat} ${m-right}
+layout laptop-*ext-90 'Vendor and Partner Catalog' ${left-fat} ${m-right}
 layout laptop-*ext-90 'Portfolio Teams'                 ${right-third} ${m-right}
 layout laptop-*ext-90 'bob'                             ${right-third} ${m-right}
 layout laptop-*ext-90 'Android Studio'                  ${right-full-1} ${m-right} | ${right-full-2} ${m-right}
@@ -151,7 +151,7 @@ layout laptop-*ext-90 'xMatters'                        ${right-threequarters} $
 layout laptop-*ext-90 'ChatGPT'       				          ${right-twothirds} ${m-right}
 layout laptop-*ext-90 'Claude'       				            ${right-twothirds} ${m-right}
 layout laptop-*ext-90 'Zip'                             ${left-fat} ${m-right} | ${left-fat-2} ${m-right} | ${left-fat-3} ${m-right}
-layout laptop-*ext-90 'Vendor and Tool Catalog - Product-org'                             ${left-fat} ${m-right} | ${left-fat-2} ${m-right} | ${left-fat-3} ${m-right} | ${left-fat-4} ${m-right} | ${left-fat-5} ${m-right} | ${left-fat-6} ${m-right}
+layout laptop-*ext-90 'Vendor and Partner Catalog'                             ${left-fat} ${m-right} | ${left-fat-2} ${m-right} | ${left-fat-3} ${m-right} | ${left-fat-4} ${m-right} | ${left-fat-5} ${m-right} | ${left-fat-6} ${m-right}
 
 layout laptop-*ext-90 'iTerm2':REPEAT					          ${full} ${m-90}
 layout laptop-*ext-90 'Google Chat'				              ${full} ${m-90}
@@ -171,11 +171,12 @@ layout laptop-*ext 'Projects Tooling and Optimization'    ${right-nearfull} ${m-
 layout laptop-*ext 'Google Meet'                          ${left-nearfull} ${m-left}
 layout laptop-*ext 'Preview'                         ${right-half} ${m-left} | ${right-half-2} ${m-left} | ${right-half-3} ${m-left} | ${right-half-4} ${m-left}
 layout laptop-*ext 'Finder':REPEAT                           ${right-fat} ${m-left}
-layout laptop-*ext 'Vendor and Tool Catalog - Product-org' ${right-fat} ${m-left}
+layout laptop-*ext 'Vendor and Partner Catalog' ${right-fat} ${m-left}
 layout laptop-*ext 'Google Drive' ${right-fat} ${m-left}
 layout laptop-*ext 'Activity Monitor' ${center-fat} ${m-left}
 layout laptop-*ext 'Safari' ${center-fat} ${m-left}
 layout laptop-*ext 'bob' ${right-twothirds} ${m-left}
+layout laptop-*ext 'Float' ${right-nearfull} ${m-left}
 
 layout laptop-*ext 'Slack'							              ${right-half} ${m-right} | ${right-twothirds} ${m-right} | ${right-twothirds-3} ${m-right}
 layout laptop-*ext 'Slack Digest'							        ${center-half} ${m-right}
@@ -241,7 +242,7 @@ layout laptop 	'Cursor':REPEAT 			            ${right-nearfull} | ${right-nearfu
 layout laptop 	'iTerm2':REPEAT 				          ${right-nearfull}
 layout laptop   'Notion':REPEAT                   ${left-fat-3} | ${left-fat-4} | ${left-fat-5} | ${left-fat-6} | ${left-fat-7} | ${left-fat-8}
 layout laptop 'Vendor Conversations Log'        ${left-fat-3}
-layout laptop 'Vendor and Tool Catalog - Product-org' ${left-fat}
+layout laptop 'Vendor and Partner Catalog' ${left-fat}
 layout laptop 'Projects Tooling and Optimization' ${left-fat-2}
 layout laptop 'Portfolio Teams'                 ${right-third}
 layout laptop 'bob'                             ${right-third}
