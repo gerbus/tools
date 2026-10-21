@@ -201,6 +201,7 @@ layout laptop-*ext 'Gemini'                           ${left-half} ${m-right}
 
 ########################
 # (2 Monitors) Jane Office Setup — laptop BELOW the external display
+# m-right is the laptop (bottom), m-left is the external (top)
 layout laptop-*ext-rev 'Spotify':REPEAT				            ${left-fat} ${m-right}
 layout laptop-*ext-rev 'Activity Monitor'				          ${right-quarter} ${m-right}
 layout laptop-*ext-rev 'Sequel Pro':REPEAT 			          ${right-half} ${m-right}
@@ -218,7 +219,7 @@ layout laptop-*ext-rev 'Safari' ${center-fat} ${m-left}
 layout laptop-*ext-rev 'bob' ${right-twothirds} ${m-right}
 layout laptop-*ext-rev 'Float' ${right-nearfull} ${m-right}
 
-layout laptop-*ext-rev 'Slack'							              ${right-half} ${m-right} | ${right-twothirds} ${m-right} | ${right-twothirds-3} ${m-right}
+layout laptop-*ext-rev 'Slack'							              ${right-nearfull} ${m-right} | ${right-twothirds} ${m-right} | ${right-twothirds-3} ${m-right}
 layout laptop-*ext-rev 'Slack Digest'							        ${center-half} ${m-right}
 layout laptop-*ext-rev 'Google Chrome':REPEAT		      ${left-fat} ${m-left} | ${left-fat-2} ${m-left} | ${left-fat-3} ${m-left} | ${left-fat-4} ${m-left} | ${left-fat-5} ${m-left} | ${left-fat-6} ${m-left} | ${left-fat-7} ${m-left} | ${left-fat-8} ${m-left} | ${left-fat-9} ${m-left} | ${left-fat-10} ${m-left} | ${left-fat-11} ${m-left} | ${left-fat-12} ${m-left} | ${left-fat-13} ${m-left} | ${left-fat-14} ${m-left} | ${left-fat-15} ${m-left}
 layout laptop-*ext-rev 'Notion'                           ${left-threequarters} ${m-left} | ${left-threequarters-2} ${m-left} | ${left-threequarters-3} ${m-left} | ${left-threequarters-4} ${m-left}
