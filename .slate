@@ -200,6 +200,46 @@ layout laptop-*ext 'Photopea'                         ${left-half} ${m-right}
 layout laptop-*ext 'Gemini'                           ${left-half} ${m-right}
 
 ########################
+# (2 Monitors) Home Office Setup, REVERSED - same as laptop-*ext with the monitors swapped (external is left of the laptop)
+layout laptop-*ext-rev 'Spotify':REPEAT				            ${left-fat} ${m-right}
+layout laptop-*ext-rev 'Activity Monitor'				          ${right-quarter} ${m-right}
+layout laptop-*ext-rev 'Sequel Pro':REPEAT 			          ${right-half} ${m-right}
+layout laptop-*ext-rev 'zoom.us'		                          ${left-nearfull} ${m-right}
+layout laptop-*ext-rev 'qemu-system-x86_64'                   ${right-third} ${m-right}
+layout laptop-*ext-rev 'Simulator'                            ${center-third} ${m-right}
+layout laptop-*ext-rev 'Projects Tooling and Optimization'    ${right-nearfull} ${m-right}
+layout laptop-*ext-rev 'Google Meet'                          ${left-nearfull} ${m-right}
+layout laptop-*ext-rev 'Preview'                         ${right-half} ${m-right} | ${right-half-2} ${m-right} | ${right-half-3} ${m-right} | ${right-half-4} ${m-right}
+layout laptop-*ext-rev 'Finder':REPEAT                           ${right-fat} ${m-right}
+layout laptop-*ext-rev 'Vendor and Partner Catalog' ${right-fat} ${m-right}
+layout laptop-*ext-rev 'Google Drive' ${right-fat} ${m-right}
+layout laptop-*ext-rev 'Activity Monitor' ${center-fat} ${m-right}
+layout laptop-*ext-rev 'Safari' ${center-fat} ${m-right}
+layout laptop-*ext-rev 'bob' ${right-twothirds} ${m-right}
+layout laptop-*ext-rev 'Float' ${right-nearfull} ${m-right}
+
+layout laptop-*ext-rev 'Slack'							              ${right-half} ${m-left} | ${right-twothirds} ${m-left} | ${right-twothirds-3} ${m-left}
+layout laptop-*ext-rev 'Slack Digest'							        ${center-half} ${m-left}
+layout laptop-*ext-rev 'Google Chrome':REPEAT		      ${left-fat} ${m-left} | ${left-fat-2} ${m-left} | ${left-fat-3} ${m-left} | ${left-fat-4} ${m-left} | ${left-fat-5} ${m-left} | ${left-fat-6} ${m-left} | ${left-fat-7} ${m-left} | ${left-fat-8} ${m-left} | ${left-fat-9} ${m-left} | ${left-fat-10} ${m-left} | ${left-fat-11} ${m-left} | ${left-fat-12} ${m-left} | ${left-fat-13} ${m-left} | ${left-fat-14} ${m-left} | ${left-fat-15} ${m-left}
+layout laptop-*ext-rev 'Notion'                           ${left-threequarters} ${m-left} | ${left-threequarters-2} ${m-left} | ${left-threequarters-3} ${m-left} | ${left-threequarters-4} ${m-left}
+layout laptop-*ext-rev 'Cursor':REPEAT			              ${left-threequarters} ${m-left} | ${left-threequarters-2} ${m-left} | ${left-threequarters-3} ${m-left} | ${left-threequarters-4} ${m-left}
+layout laptop-*ext-rev 'Code':REPEAT			                ${left-nearfull} ${m-left} | ${center-nearfull} ${m-right}
+layout laptop-*ext-rev 'Sublime Text':REPEAT			        ${left-threequarters} ${m-left} | ${left-threequarters-2} ${m-left} | ${left-threequarters-3} ${m-left} | ${left-threequarters-4} ${m-left}
+layout laptop-*ext-rev 'Android Studio'                   ${left-threequarters} ${m-left}
+layout laptop-*ext-rev 'iTerm2':REPEAT					          ${right-twothirds} ${m-left}
+layout laptop-*ext-rev 'Google Chat'				              ${right-half} ${m-left}
+layout laptop-*ext-rev 'Todoist':REPEAT		                ${right-half-2} ${m-left}
+layout laptop-*ext-rev 'BSF'                              ${left-threequarters} ${m-left} | ${left-threequarters-2} ${m-left}
+layout laptop-*ext-rev 'ChatGPT'       				            ${right-twothirds} ${m-left}
+layout laptop-*ext-rev 'Claude'       				            ${right-twothirds} ${m-left} | ${right-twothirds-2} ${m-left} | ${right-twothirds-3} ${m-left} | ${right-twothirds-4} ${m-left}
+layout laptop-*ext-rev 'Google Calendar'                  ${left-half} ${m-left}
+layout laptop-*ext-rev 'Zip'                              ${left-fat} ${m-left} | ${left-fat-2} ${m-left} | ${left-fat-3} ${m-left}
+layout laptop-*ext-rev 'Discovery'                     		${right-threequarters} ${m-left}
+layout laptop-*ext-rev 'Fellow'                           ${left-half} ${m-left}
+layout laptop-*ext-rev 'Photopea'                         ${left-half} ${m-left}
+layout laptop-*ext-rev 'Gemini'                           ${left-half} ${m-left}
+
+########################
 # "main" screen is the laptop, and there's an external to the right
 layout *laptop-ext 'Spotify':REPEAT				            ${right-fat} ${m-right}
 layout *laptop-ext 'Activity Monitor'				          ${right-quarter} ${m-right}
@@ -267,6 +307,7 @@ bind 1:alt;cmd		      layout laptop
 bind 2:alt;cmd 	        layout laptop-*ext      # "main" screen is the external one, and right of the laptop
 bind 2:alt;cmd;shift    layout *laptop-ext      # "main" screen is the laptop (external on right)
 bind 3:alt;cmd          layout laptop-*ext-90   # From left to right: laptop, main external, 90 degree orientation external
+bind 4:alt;cmd          layout laptop-*ext-rev  # same as 2, but monitors reversed (external is left of the laptop)
 
 bind s:alt;cmd 		focus 'Sublime Text'
 bind t:alt;cmd		focus 'iTerm2'
