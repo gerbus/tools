@@ -200,7 +200,7 @@ layout laptop-*ext 'Photopea'                         ${left-half} ${m-right}
 layout laptop-*ext 'Gemini'                           ${left-half} ${m-right}
 
 ########################
-# (2 Monitors) Home Office Setup, laptop BELOW the external display - same as laptop-*ext with the monitors swapped (Slack and Safari kept on the other screen)
+# (2 Monitors) Jane Office Setup — laptop BELOW the external display
 layout laptop-*ext-rev 'Spotify':REPEAT				            ${left-fat} ${m-right}
 layout laptop-*ext-rev 'Activity Monitor'				          ${right-quarter} ${m-right}
 layout laptop-*ext-rev 'Sequel Pro':REPEAT 			          ${right-half} ${m-right}
