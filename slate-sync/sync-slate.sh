@@ -3,7 +3,7 @@
 # local changed only  -> commit + push
 # remote changed only -> back up ~/.slate, then copy the repo version over it
 # both changed        -> touch nothing, notify
-export PATH="/opt/homebrew/bin:/usr/bin:/bin"
+export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 set -u
 
 SRC="$HOME/.slate"
