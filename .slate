@@ -170,7 +170,7 @@ layout laptop-*ext 'Simulator'                            ${center-third} ${m-le
 layout laptop-*ext 'Projects Tooling and Optimization'    ${right-nearfull} ${m-left}
 layout laptop-*ext 'Google Meet'                          ${left-nearfull} ${m-left}
 layout laptop-*ext 'Preview'                         ${right-half} ${m-left} | ${right-half-2} ${m-left} | ${right-half-3} ${m-left} | ${right-half-4} ${m-left}
-layout laptop-*ext 'Finder':REPEAT                           ${right-fat} ${m-left} | ${right-fat-1} ${m-left} | ${right-fat-2} ${m-left} | ${right-fat-3} ${m-left}
+layout laptop-*ext 'Finder':REPEAT                           ${right-fat} ${m-left} | ${right-fat-2} ${m-left} | ${right-fat-3} ${m-left} | ${right-fat-4} ${m-left}
 layout laptop-*ext 'Vendor and Partner Catalog' ${right-fat} ${m-left}
 layout laptop-*ext 'Google Drive' ${right-fat} ${m-left}
 layout laptop-*ext 'Activity Monitor' ${center-fat} ${m-left}
