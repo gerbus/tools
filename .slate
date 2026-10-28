@@ -196,8 +196,11 @@ layout laptop-*ext 'Google Calendar'                  ${left-half} ${m-right}
 layout laptop-*ext 'Zip'                              ${left-fat} ${m-right} | ${left-fat-2} ${m-right} | ${left-fat-3} ${m-right}
 layout laptop-*ext 'Discovery'                     		${right-threequarters} ${m-right}
 layout laptop-*ext 'Fellow'                           ${left-half} ${m-right}
+layout laptop-*ext 'Fireflies'                           ${left-half} ${m-right}
+layout laptop-*ext 'Grain'                           ${left-half} ${m-right}
 layout laptop-*ext 'Photopea'                         ${left-half} ${m-right}
 layout laptop-*ext 'Gemini'                           ${left-half} ${m-right}
+
 
 ########################
 # (2 Monitors) Jane Office Setup — laptop BELOW the external display
